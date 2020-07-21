@@ -16,5 +16,16 @@ namespace health_api.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Exam> Exams { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Exam>()
+                .HasKey(x => new { x.UserId, x.ColaboratorId });
+        }
     }
 }

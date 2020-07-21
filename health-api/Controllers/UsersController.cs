@@ -21,12 +21,26 @@ namespace health_api.Controllers
         }
 
         [HttpGet]
-        [Route("{uid}")]
-        public async Task<ActionResult<List<User>>> getUsers(Guid uid)
+        public async Task<ActionResult<List<User>>> getUsers()
         {
             var users = await _context.Users.ToListAsync();
-            List<User> user = new List<User>();
-            return Ok(user);
+            return Ok(users);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<List<User>>> createUser(User userModel)
+        {
+            var users = await _context.Users.Where(u => u.Email == userModel.Email).ToListAsync();
+            if (users.Count > 0)
+                return BadRequest(new { message = "Endereço de Email já cadastrado" });
+
+            userModel.Role = "User";
+            userModel.Sexo = userModel.Sexo != null ? userModel.Sexo : "M"; 
+
+            _context.Add<User>(userModel);
+            await _context.SaveChangesAsync();
+
+            return Ok(userModel);
         }
     }
 }
