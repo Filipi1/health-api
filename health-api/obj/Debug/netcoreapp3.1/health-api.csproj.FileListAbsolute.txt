@@ -30,8 +30,6 @@ C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1
 C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\Npgsql.dll
 C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
-C:\Users\Filipe Braga\source\repos\health-api\health-api\obj\Debug\netcoreapp3.1\health-api.csproj.CoreCompileInputs.cache
-C:\Users\Filipe Braga\source\repos\health-api\health-api\obj\Debug\netcoreapp3.1\health-api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\health-api.deps.json
 C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\health-api.runtimeconfig.json
 C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\health-api.runtimeconfig.dev.json
@@ -42,3 +40,13 @@ C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1
 C:\Users\Filipe Braga\source\repos\health-api\health-api\obj\Debug\netcoreapp3.1\health-api.dll
 C:\Users\Filipe Braga\source\repos\health-api\health-api\obj\Debug\netcoreapp3.1\health-api.pdb
 C:\Users\Filipe Braga\source\repos\health-api\health-api\obj\Debug\netcoreapp3.1\health-api.genruntimeconfig.cache
+C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Filipe Braga\source\repos\health-api\health-api\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Filipe Braga\source\repos\health-api\health-api\obj\Debug\netcoreapp3.1\health-api.csproj.CoreCompileInputs.cache
+C:\Users\Filipe Braga\source\repos\health-api\health-api\obj\Debug\netcoreapp3.1\health-api.MvcApplicationPartsAssemblyInfo.cache

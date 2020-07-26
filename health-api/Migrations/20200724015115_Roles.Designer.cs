@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using health_api.Data;
@@ -9,9 +10,10 @@ using health_api.Data;
 namespace health_api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20200724015115_Roles")]
+    partial class Roles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,11 +111,11 @@ namespace health_api.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("Badge")
-                        .HasColumnType("text");
+                    b.Property<int>("Badge")
+                        .HasColumnType("integer");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
+                    b.Property<int>("Name")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -154,8 +156,8 @@ namespace health_api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("integer");
+                    b.Property<string>("Role")
+                        .HasColumnType("text");
 
                     b.Property<string>("Sexo")
                         .HasColumnType("text");
@@ -164,8 +166,6 @@ namespace health_api.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
 
                     b.HasIndex("addressId");
 
@@ -189,12 +189,6 @@ namespace health_api.Migrations
 
             modelBuilder.Entity("health_api.Model.User", b =>
                 {
-                    b.HasOne("health_api.Model.Role", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("health_api.Model.Address", "address")
                         .WithMany()
                         .HasForeignKey("addressId");

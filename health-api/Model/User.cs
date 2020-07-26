@@ -25,6 +25,7 @@ namespace health_api.Model
         [MinLength(6, ErrorMessage = "O Campo 'Senha' deve conter no mínimo 6 caracteres")]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = "O Campo {0} deve ser preenchido.")]
         public string CPF { get; set; }
 
         public DateTime BornDate { get; set; }
@@ -43,6 +44,8 @@ namespace health_api.Model
 
         public bool Active { get; set; }
 
-        public string Role { get; set; }
+        public int RoleId { get; set; }
+
+        public Role Role { get; set; }
     }
 }

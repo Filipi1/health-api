@@ -11,11 +11,11 @@ namespace health_api.Model
     {
         [Key]
         public Guid Id { get; set; }
+        
         [Required(ErrorMessage = "O Campo {0} é obrigatório")]
-
         public string Description { get; set; }
-        [Required(ErrorMessage = "O Campo {0} é obrigatório")]
 
+        [Required(ErrorMessage = "O Campo {0} é obrigatório")]
         public int CategoryId { get; set; }
 
         public Category Category { get; set; }
@@ -23,11 +23,11 @@ namespace health_api.Model
         public DateTime AppointmentDate { get; set; }
 
         [Required(ErrorMessage = "O Campo {0} é obrigatório")]
-        public Guid ColaboratorId { get; set; }
-
-        [Required(ErrorMessage = "O Campo {0} é obrigatório")]
         public Guid UserId { get; set; }
 
-        public User User { get; set; }
+        [Required(ErrorMessage = "O Campo {0} é obrigatório")]
+        public Guid ColaboratorId { get; set; }
+
+        public User Colaborator { get; set; }
     }
 }
