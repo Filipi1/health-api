@@ -32,6 +32,9 @@ namespace health_api
         {
             services.AddControllers();
 
+            services.Configure<ApiBehaviorOptions>(options =>
+                options.SuppressModelStateInvalidFilter = true);
+
             services.AddDbContext<DataContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("connectionString")));
 
             var key = Encoding.ASCII.GetBytes(Settings.Secret);

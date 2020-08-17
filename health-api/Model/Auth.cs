@@ -10,6 +10,7 @@ namespace health_api.Model
     {
         [Required(ErrorMessage = "O Campo {0} é obrigatório")]
         public string CPF { get; set; }
+        [Display(Name = "Senha")]
         [Required(ErrorMessage = "O Campo {0} é obrigatório")]
         public string Password { get; set; }
     }

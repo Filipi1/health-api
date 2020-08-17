@@ -27,6 +27,20 @@ namespace health_api.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<dynamic>> Auth(Auth model)
         {
+            if(!ModelState.IsValid)
+            {
+                List<string> errorsReturn = new List<string>();
+                var erros = ModelState.Select(x => x.Value.Errors).Where(y => y.Count() > 0);
+
+                foreach (var error in erros) {
+                    foreach (var e in error) {
+                        errorsReturn.Add(e.ErrorMessage);
+                    }
+                }
+
+                return BadRequest(new { errors = errorsReturn });
+            }
+
             var user = await _context.Users
                 .AsNoTracking()
                 .Where(x => x.CPF == model.CPF && x.Password == model.Password)
