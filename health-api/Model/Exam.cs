@@ -16,18 +16,21 @@ namespace health_api.Model
         public string Description { get; set; }
 
         [Required(ErrorMessage = "O Campo {0} é obrigatório")]
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
 
         public Category Category { get; set; }
 
-        public DateTime AppointmentDate { get; set; }
+        [Required(ErrorMessage = "O Campo {0} é obrigatório")]
+        public DateTime? AppointmentDate { get; set; }
 
         [Required(ErrorMessage = "O Campo {0} é obrigatório")]
-        public Guid UserId { get; set; }
+        public Guid? UserId { get; set; }
 
         [Required(ErrorMessage = "O Campo {0} é obrigatório")]
-        public Guid ColaboratorId { get; set; }
+        public Guid? ColaboratorId { get; set; }
 
         public User Colaborator { get; set; }
+
+        public bool Active { get; set; }
     }
 }

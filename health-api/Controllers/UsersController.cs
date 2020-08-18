@@ -60,13 +60,13 @@ namespace health_api.Controllers
 
         [HttpPut]
         [Authorize(Roles = "User, Admnistrator")]
-        [Route("{id}")]
-        public async Task<ActionResult<User>> updateUser(Guid id, UserViewModel userModel)
+        [Route("{cpf}")]
+        public async Task<ActionResult<User>> updateUser(string cpf, UserViewModel userModel)
         {
-            if (id != userModel.Id)
+            if (cpf != userModel.CPF)
                 return NotFound(new { message = "Usuário não encontrado" });
 
-            User user = await _context.Users.Where(u => u.Id == id).FirstOrDefaultAsync();
+            User user = await _context.Users.Where(u => u.CPF == cpf).FirstOrDefaultAsync();
             PropertyInfo[] userProperties = userModel.GetType().GetProperties();
             foreach (PropertyInfo info in userProperties)
             {

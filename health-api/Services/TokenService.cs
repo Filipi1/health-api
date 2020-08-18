@@ -23,16 +23,15 @@ namespace health_api.Services
                 {
                     new Claim(ClaimTypes.Name, user.Name.ToString()),
                     new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                    new Claim(ClaimTypes.Email, user.Email.ToString()),
                     new Claim(ClaimTypes.Role, user.Role.Name.ToString())
                 }),
-                Expires = DateTime.UtcNow.AddHours(2),
+                Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var stoken = tokenHandler.WriteToken(token);
-            var response = new { token = stoken, expires = tokenDescriptor.Expires?.ToString("dd/MM/yyyy HH:mm") };
+            var response = new { token = stoken, expires = tokenDescriptor.Expires };
             return response;
         }
     }
