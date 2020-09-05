@@ -69,7 +69,7 @@ namespace health_api.Controllers
         [Route("{uid}")]
         public async Task<ActionResult<List<Exam>>> getExams([FromRoute] Guid uid)
         {
-            var exams = await _context.Exams.Include(e => e.Colaborator).Where(u => u.UserId == uid).ToListAsync();
+            var exams = await _context.Exams.Where(u => u.UserId == uid).ToListAsync();
             if (exams.Count == 0)
                 return NotFound(new { message = "Não possui nenhum exame agendado" });
 

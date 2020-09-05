@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using health_api.Data;
@@ -9,9 +10,10 @@ using health_api.Data;
 namespace health_api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20200830172640_nomes")]
+    partial class nomes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -124,9 +126,6 @@ namespace health_api.Migrations
 
                     b.Property<string>("nome")
                         .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("url")
                         .HasColumnType("text");
 
                     b.HasKey("id");

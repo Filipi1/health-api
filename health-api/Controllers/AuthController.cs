@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using health_api.Data;
 using health_api.Model;
 using health_api.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +23,16 @@ namespace health_api.Controllers
         public AuthController(DataContext context)
         {
             _context = context;
+        }
+
+        [HttpGet("check")]
+        [AllowAnonymous]
+        public ActionResult CheckAPI()
+        {
+            if (!HttpContext.User.Identity.IsAuthenticated)
+                return NotFound();
+
+            return Ok();
         }
 
         [HttpPost]
